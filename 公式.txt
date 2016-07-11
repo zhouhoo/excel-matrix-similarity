@@ -1,0 +1,10 @@
+in single one formula function:
+
+pearson similarity:
+="=CORREL("&address(2,row(b2))&":"&address(7,row(b2))&","&address(2,column(b2))&":"&address(7,column(b2))&")"
+
+cosin similarity:
+="=sumproduct("&address(2,row(b2))&":"&address(7,row(b2))&","&address(2,column(b2))&":"&address(7,column(b2))&")" &"/(sumsq("&address(2,row(b2))&":"&address(7,row(b2))&")*sumsq("&address(2,column(b2))&":"&address(7,column(b2))&"))"
+
+pearman similarity:
+="=6*sum((rank("&address(2,row(b2))&","&address(2,row(b2))&":"&address(7,row(b2))&")-rank("&address(2,column(b2))&","&address(2,column(b2))&":"&address(7,column(b2))&"))^2) / 210"
